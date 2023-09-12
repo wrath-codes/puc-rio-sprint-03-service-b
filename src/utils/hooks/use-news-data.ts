@@ -15,6 +15,7 @@ export function useNewsData(givenUrl: string) {
   const [news, setNews] = useState<IArticle[]>([])
   const [page, setPage] = useState(1)
   const [pageSize, setPageSize] = useState(20)
+  const [results, setResults] = useState(0)
 
   async function fetchNews(page: number, pageSize: number) {
     const url = composeUrl(givenUrl, page, pageSize)
@@ -27,8 +28,8 @@ export function useNewsData(givenUrl: string) {
       .then((res) => res.json() as Promise<INewsData>)
       .catch((err) => console.error(err))
 
-    console.log(response)
     setNews(response!.articles)
+    setResults(response!.totalResults)
   }
 
   useEffect(() => {
@@ -37,8 +38,8 @@ export function useNewsData(givenUrl: string) {
   }, [])
 
   const getNextPage = () => {
-    fetchNews(page, pageSize)
     setPage(page + 1)
+    fetchNews(page, pageSize)
   }
 
   const getPrevPage = () => {
@@ -66,14 +67,25 @@ export function useNewsData(givenUrl: string) {
     return Math.ceil(news.length / pageSize)
   }
 
+  const getTotalPages = () => {
+    return Math.ceil(results / pageSize)
+  }
+
+  const getTotalResults = () => {
+    return results
+  }
+
   return {
     news,
+    results,
     getCurrentPageNumber,
     getNextPage,
     getPrevPage,
     getFirstPage,
     getLastPage,
     getLastPageNumber,
+    getTotalPages,
+    getTotalResults,
     setPageSize,
   }
 }

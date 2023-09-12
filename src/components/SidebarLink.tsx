@@ -13,7 +13,7 @@ export function SidebarLink({ icon, href, title }: ISidebarLink): JSX.Element {
   const [location] = useLocation()
   return (
     <li
-      className={`flex items-center justify-start w-full rounded-md h-12 px-2 py-2 font-semibold text-xl ${location === href
+      className={`flex items-center justify-start w-full rounded-md h-12 px-1 py-2 font-semibold text-lg ${location === href
         ? 'bg-transparent text-violet-400'
         : 'text-zinc-300 hover:bg-zinc-800 hover:text-violet-400'
         }`}

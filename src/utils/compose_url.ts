@@ -5,7 +5,7 @@ export function composeUrl(path: string, page?: number, pageSize?: number) {
     path +
     `${page ? '&page=' + page : ''}` +
     `${pageSize ? '&pageSize=' + pageSize : ''}` +
-    '?apiKey=' +
+    '&apiKey=' +
     import.meta.env.VITE_API_KEY
   console.log(url)
   return url

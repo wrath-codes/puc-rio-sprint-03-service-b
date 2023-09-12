@@ -1,4 +1,8 @@
-import { DocumentTextIcon, PuzzlePieceIcon } from '@heroicons/react/20/solid'
+import {
+  BoltIcon,
+  DocumentTextIcon,
+  PuzzlePieceIcon,
+} from '@heroicons/react/20/solid'
 
 import { AppLogo } from './AppLogo'
 import { SidebarLink } from './SidebarLink'
@@ -14,6 +18,12 @@ export function Sidebar(): JSX.Element {
         icon={<PuzzlePieceIcon className="w-8 h-8" />}
         href="/top-headlines"
         title="Top Headlines"
+      />
+
+      <SidebarLink
+        icon={<BoltIcon className="w-8 h-8" />}
+        href="/sources"
+        title="Sources"
       />
     </aside>
   )
