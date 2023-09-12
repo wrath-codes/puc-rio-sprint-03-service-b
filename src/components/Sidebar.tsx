@@ -1,7 +1,9 @@
 import {
   BoltIcon,
   DocumentTextIcon,
-  PuzzlePieceIcon,
+  MagnifyingGlassIcon,
+  SwatchIcon,
+  TrophyIcon,
 } from '@heroicons/react/20/solid'
 
 import { AppLogo } from './AppLogo'
@@ -15,15 +17,27 @@ export function Sidebar(): JSX.Element {
         appName="MyNews"
       />
       <SidebarLink
-        icon={<PuzzlePieceIcon className="w-8 h-8" />}
+        icon={<TrophyIcon className="w-7 h-7" />}
         href="/top-headlines"
         title="Top Headlines"
       />
 
       <SidebarLink
-        icon={<BoltIcon className="w-8 h-8" />}
+        icon={<BoltIcon className="w-7 h-7" />}
         href="/sources"
         title="Sources"
+      />
+
+      <SidebarLink
+        icon={<SwatchIcon className="w-7 h-7" />}
+        href="/categories"
+        title="Categories"
+      />
+
+      <SidebarLink
+        icon={<MagnifyingGlassIcon className="w-7 h-7" />}
+        href="/search"
+        title="Search"
       />
     </aside>
   )

@@ -1,7 +1,9 @@
+import { CategoriesPage } from './components/pages/CategoriesPage'
 import { NewsPage } from './components/pages/NewsPage'
 import { Route } from 'wouter'
+import { SearchPage } from './components/pages/SearchPage'
 import { Sidebar } from './components/Sidebar'
-import { SourcesPage } from './components/pages/SorcesPage'
+import { SourcesPage } from './components/pages/SourcesPage'
 export default function App() {
   return (
     <div className="bg-zinc-900 text-zinc-100">
@@ -29,11 +31,18 @@ export default function App() {
                 />
               )}
             </Route>
-            <Route path="search/:query">
+            <Route path="/search">
+              <SearchPage />
+            </Route>
+
+            <Route path="/categories">
+              <CategoriesPage title="Categories" />
+            </Route>
+            <Route path="/categories/:id/:name">
               {(params) => (
                 <NewsPage
-                  givenUrl={`/everything?q=${params.query}`}
-                  title={`Search results for ${params.query}`}
+                  givenUrl={`/top-headlines?country=us&category=${params.id}`}
+                  title={`${params.name} News`}
                 />
               )}
             </Route>
