@@ -6,6 +6,7 @@ interface IAppLogo {
   appName: string
 }
 
+// Component that displays the app logo
 export function AppLogo({ icon, appName }: IAppLogo): JSX.Element {
   return (
     <Link href="/top-headlines">

@@ -3,6 +3,7 @@ export interface ICategory {
   name: string
 }
 
+// Component that displays a category
 export function Category({ id, name }: ICategory): JSX.Element {
   return (
     <div className="text-start ml-5 my-1 p-2 rounded-md hover:bg-violet-500/20 ">

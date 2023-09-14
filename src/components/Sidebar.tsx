@@ -1,6 +1,7 @@
 import {
   BoltIcon,
   DocumentTextIcon,
+  LinkIcon,
   MagnifyingGlassIcon,
   SwatchIcon,
   TrophyIcon,
@@ -9,6 +10,7 @@ import {
 import { AppLogo } from './AppLogo'
 import { SidebarLink } from './SidebarLink'
 
+// Component that displays the sidebar
 export function Sidebar(): JSX.Element {
   return (
     <aside className="w-72 bg-zinc-700 py-6 p-6 h-screen sticky top-0">
@@ -38,6 +40,12 @@ export function Sidebar(): JSX.Element {
         icon={<MagnifyingGlassIcon className="w-7 h-7" />}
         href="/search"
         title="Search"
+      />
+      <div className="border-b my-5 border-violet-500"></div>
+      <SidebarLink
+        icon={<LinkIcon className="w-7 h-7" />}
+        href="/saved"
+        title="Saved Articles"
       />
     </aside>
   )

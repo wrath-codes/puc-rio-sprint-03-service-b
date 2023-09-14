@@ -4,6 +4,7 @@ import { Pagination } from '../Pagination'
 import { useNewsData } from '../../utils/hooks/use-news-data'
 import { useState } from 'react'
 
+// SearchPage is the page that displays the search results
 export function SearchPage(): JSX.Element {
   const newsData = useNewsData('/top-headlines?country=us')
   const [searchTerm, setSearchTerm] = useState<string>('')

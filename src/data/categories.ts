@@ -1,3 +1,4 @@
+// Categories for the news
 export const categories = [
   {
     name: 'Business',

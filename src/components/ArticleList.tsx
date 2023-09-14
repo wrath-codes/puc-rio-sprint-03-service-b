@@ -3,8 +3,8 @@ import { Article, IArticle } from './Article'
 export interface IArticleList {
   articles: IArticle[]
 }
-
-export function ArticleList({ articles }: { articles: IArticle[] }) {
+// Component that displays a list of articles
+export function ArticleList({ articles }: IArticleList): JSX.Element {
   return (
     <>
       {articles.map((article) => (

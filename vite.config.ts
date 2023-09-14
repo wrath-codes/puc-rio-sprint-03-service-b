@@ -11,6 +11,11 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/news-api/, ''),
       },
+      '/articles-api': {
+        target: 'http://localhost:4200',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/articles-api/, ''),
+      },
     },
   },
   plugins: [react(), tsconfigPaths()],

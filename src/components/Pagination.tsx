@@ -5,6 +5,7 @@ interface IPagination {
   totalPages: number
 }
 
+// Component that displays pagination
 export function Pagination({
   page,
   nextPage,

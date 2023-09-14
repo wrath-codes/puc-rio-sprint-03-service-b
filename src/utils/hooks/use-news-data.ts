@@ -20,9 +20,12 @@ export function useNewsData(givenUrl: string) {
     query: '',
   })
 
+  // Fetch news data from the API
   async function fetchNews(page: number, query?: string) {
+    // If there is a query, use the query url
     if (query) {
       const url = composeUrl(`/everything?q=${query}&language=en`, page, query)
+      console.log(url)
       const response = await fetch(url, {
         headers: {
           'Access-Control-Allow-Origin': '*',
@@ -39,6 +42,7 @@ export function useNewsData(givenUrl: string) {
         articles: response!.articles,
         query,
       })
+      // If there is no query, use the given url
     } else {
       const url = composeUrl(givenUrl, page)
       const response = await fetch(url, {
@@ -60,6 +64,7 @@ export function useNewsData(givenUrl: string) {
     }
   }
 
+  // Get the next page of news
   const getNextPage = () => {
     if (news.query) {
       fetchNews(news.page! + 1, news.query)
@@ -68,6 +73,7 @@ export function useNewsData(givenUrl: string) {
     }
   }
 
+  // Get the previous page of news
   const getPrevPage = () => {
     if (news.query) {
       fetchNews(news.page! - 1, news.query)

@@ -9,6 +9,8 @@ interface ISidebarLink {
   title: string
 }
 
+
+// Component that displays a link in the sidebar
 export function SidebarLink({ icon, href, title }: ISidebarLink): JSX.Element {
   const [location] = useLocation()
   return (

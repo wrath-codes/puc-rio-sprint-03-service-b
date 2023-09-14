@@ -4,6 +4,7 @@ export interface ICategoriesList {
   categories: ICategory[]
 }
 
+// Component that displays a list of categories
 export function CategoryList({ categories }: ICategoriesList): JSX.Element {
   return (
     <div className="flex flex-col">

@@ -1,6 +1,7 @@
 import { ArticleList } from '../ArticleList'
 import { PageTitle } from '../PageTitle'
 import { Pagination } from '../Pagination'
+import { useArticleStore } from '../../feature/article/articleStore'
 import { useEffect } from 'react'
 import { useNewsData } from '../../utils/hooks/use-news-data'
 
@@ -9,11 +10,15 @@ export interface INews {
   title: string
 }
 
+// NewsPage is the page that displays all the news
 export function NewsPage({ givenUrl, title }: INews): JSX.Element {
   const newsData = useNewsData(givenUrl)
+  const { resetAll } = useArticleStore()
 
   useEffect(() => {
+    resetAll()
     newsData.fetchNews(1)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (

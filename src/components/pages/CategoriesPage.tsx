@@ -5,6 +5,7 @@ interface CategoriesPageProps {
   title: string
 }
 
+// CategoriesPage is the page that displays all the categories
 export function CategoriesPage({ title }: CategoriesPageProps): JSX.Element {
   return (
     <>
