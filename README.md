@@ -1,4 +1,4 @@
-# Front-end para o Sprint 2
+# Front-end para o Sprint 3
 ## Descrição
 Este projeto é um front-end para Sprint 03, faz parte do ultimo sprint da Pós Graduação em Desenvolvimento Full Stack da PUC-Rio.
 
