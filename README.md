@@ -1,27 +1,52 @@
-# React + TypeScript + Vite
+# Front-end para o Sprint 2
+## Descrição
+Este projeto é um front-end para Sprint 03, faz parte do ultimo sprint da Pós Graduação em Desenvolvimento Full Stack da PUC-Rio.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Tecnologias
+- [React](https://reactjs.org/)
+- [Vite](https://vitejs.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Docker](https://www.docker.com/)
 
-Currently, two official plugins are available:
+## Pré-requisitos
+- [Node.js](https://nodejs.org/en/)
+- [NPM](https://www.npmjs.com/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Instalação
+1. Clone o repositório
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+2. Faca a build do container
+```bash
+docker build -t sprint-3-frontend .
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+3. Acesse o site
+```bash
+npm run dev
+```
+4. [Crie uma conta na NewsApi](https://www.themoviedb.org/)
+  - Va para Get API Key
+  - Preencha os campos
+  - Acesse sua conta
+  - Crie um arquivo .env na raiz do projeto
+  - Troque VITE_API_KEY pelo valor da sua API Key
+
+5. Acesse o endereço [http://localhost:5173](http://localhost:5173)
+
+
+## Autores
+- [Raphael Vaz](http://github.com/wrath-codes)
+
+6. Comandos uteis:
+```bash
+docker run -it -p 5173:5173 sprint-3-frontend
+```
+```bash
+docker stop $(docker ps -a -q)
+```
+```bash
+docker rm $(docker ps -a -q)
+```
