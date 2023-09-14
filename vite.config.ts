@@ -17,6 +17,12 @@ export default defineConfig({
         rewrite: (path) => path.replace(/^\/articles-api/, ''),
       },
     },
+    watch: {
+      usePolling: true,
+    },
+    host: true,
+    strictPort: true,
+    port: 5173,
   },
   plugins: [react(), tsconfigPaths()],
 })
