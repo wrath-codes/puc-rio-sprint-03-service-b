@@ -41,12 +41,15 @@ npm run dev
 - [Raphael Vaz](http://github.com/wrath-codes)
 
 6. Comandos uteis:
-```bash
-docker run -it -p 5173:5173 sprint-3-frontend
-```
-```bash
-docker stop $(docker ps -a -q)
-```
-```bash
-docker rm $(docker ps -a -q)
-```
+   - Para rodar o container:
+   ```bash
+   docker run -it -p 5173:5173 sprint-3-frontend
+   ```
+   - Para parar o container:
+   ```bash
+   docker stop $(docker ps -a -q)
+   ```
+   - Para remover o container:
+   ```bash
+   docker rm $(docker ps -a -q)
+   ```
