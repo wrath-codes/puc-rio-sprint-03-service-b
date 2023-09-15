@@ -11,18 +11,14 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/news-api/, ''),
       },
-      '/articles-api': {
-        target: 'http://localhost:4200',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/articles-api/, ''),
-      },
     },
     watch: {
       usePolling: true,
     },
-    host: true,
     strictPort: true,
-    port: 5173,
+    port: 3000,
+    host: true,
+    cors: true,
   },
   plugins: [react(), tsconfigPaths()],
 })

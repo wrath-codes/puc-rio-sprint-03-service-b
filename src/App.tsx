@@ -14,6 +14,14 @@ export default function App() {
         <div className="flex flex-1">
           <Sidebar />
           <main className="min-h-screen w-full px-2">
+            {/* Route for / */}
+            <Route path="/">
+              <NewsPage
+                givenUrl="/top-headlines?country=us"
+                title="Top Headlines"
+              />
+            </Route>
+
             {/* Route for /top-headlines */}
             <Route path="/top-headlines">
               <NewsPage

@@ -36,7 +36,9 @@ export interface CreateArticle {
 
 // The getArticles function is a selector that returns the articles from the server.
 const getArticles = async (): Promise<ArticleSaved[]> => {
-  const response = await fetch('/articles-api/articles')
+  const response = await fetch(
+    `${import.meta.env.VITE_ARTICLE_API_URL}/articles`,
+  )
   const articles = await response.json()
   console.log(articles)
   return articles.articles
@@ -44,7 +46,9 @@ const getArticles = async (): Promise<ArticleSaved[]> => {
 
 // The getArticle function is a selector that returns the article from the server that matches the id.
 const getArticle = async (id: number): Promise<ArticleSaved> => {
-  const response = await fetch(`/articles-api/articles&id=${id}`)
+  const response = await fetch(
+    `${import.meta.env.VITE_ARTICLE_API_URL}/articles&id=${id}`,
+  )
   const article = await response.json()
   return article
 }
@@ -61,20 +65,23 @@ const createArticle = async (article: CreateArticle): Promise<ArticleSaved> => {
     nickname: article.title,
   }
 
-  const response = await fetch('/articles-api/articles', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
+  const response = await fetch(
+    `${import.meta.env.VITE_ARTICLE_API_URL}/articles`,
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(articleToCreate),
     },
-    body: JSON.stringify(articleToCreate),
-  })
+  )
   const createdArticle = await response.json()
   return createdArticle
 }
 
 // The deleteArticle function is a mutation that deletes an article on the server.
 const deleteArticle = async (id: number): Promise<void> => {
-  await fetch('/articles-api/articles', {
+  await fetch(`${import.meta.env.VITE_ARTICLE_API_URL}/articles`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
@@ -88,13 +95,16 @@ const updateArticleNickname = async (
   id: number,
   nickname: string,
 ): Promise<void> => {
-  const article = await fetch(`/articles-api/articles/`, {
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json',
+  const article = await fetch(
+    `${import.meta.env.VITE_ARTICLE_API_URL}/articles/`,
+    {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ nickname, id }),
     },
-    body: JSON.stringify({ nickname, id }),
-  })
+  )
     .then((response) => response.json())
     .then((data) => data)
 

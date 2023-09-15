@@ -1,4 +1,6 @@
 # Front-end para o Sprint 3
+## Autores
+- [Raphael Vaz](http://github.com/wrath-codes)
 ## Descrição
 Este projeto é um front-end para Sprint 03, faz parte do ultimo sprint da Pós Graduação em Desenvolvimento Full Stack da PUC-Rio.
 
@@ -37,8 +39,6 @@ npm run dev
 5. Acesse o endereço [http://localhost:5173](http://localhost:5173)
 
 
-## Autores
-- [Raphael Vaz](http://github.com/wrath-codes)
 
 6. Comandos uteis:
    - Para rodar o container:
